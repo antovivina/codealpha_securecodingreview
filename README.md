@@ -11,6 +11,8 @@ A basic Python login system containing intentionally vulnerable code.
 ## Review Method
 
 Manual Code Inspection
+<img width="982" height="147" alt="image" src="https://github.com/user-attachments/assets/1ce4608a-9085-4dca-ba32-2010d9c2ebc1" />
+
 
 ## Vulnerabilities Identified
 
