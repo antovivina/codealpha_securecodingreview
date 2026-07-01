@@ -44,7 +44,7 @@ git clone https://github.com/your-username/Secure-Coding-Review-Tool.git
 ### 2. Navigate to the project folder
 
 ```bash
-codealpha_secure_coding_review
+codealpha_securecodingreview
 ```
 
 ### 3. Install the required package
