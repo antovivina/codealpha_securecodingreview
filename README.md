@@ -1,60 +1,127 @@
-# Secure Coding Review - Python Login Application
+# 🔐 Secure Coding Review Tool
 
-## Objective
+## 📌 Overview
 
-This project demonstrates a secure coding review of a simple Python login application. The goal is to identify security vulnerabilities, assess their risks, and provide remediation recommendations.
+The Secure Coding Review Tool is a beginner-friendly cybersecurity project developed using Python, Flask, and HTML. It performs a basic static analysis of Python source code to identify common security vulnerabilities and displays the findings through a simple and interactive web interface.
 
-## Application Reviewed
-
-A basic Python login system containing intentionally vulnerable code.
-
-## Review Method
-
-Manual Code Inspection
-<img width="982" height="147" alt="image" src="https://github.com/user-attachments/assets/1ce4608a-9085-4dca-ba32-2010d9c2ebc1" />
+Users can upload any Python (`.py`) file, and the application scans it for selected insecure coding practices, providing descriptions and remediation recommendations.
 
 
-## Vulnerabilities Identified
+## ✨ Features
 
-### 1. Hardcoded Credentials
+- Upload any Python (`.py`) file for analysis
+- Detect common Python security vulnerabilities
+- Display severity levels (Critical, High, Medium)
+- Provide vulnerability descriptions
+- Suggest remediation steps
+- Simple and user-friendly web interface
 
-**Severity:** High
+## 🛡️ Vulnerabilities Detected
 
-**Description:**
-The username and password are directly stored in the source code.
+- Hardcoded Password
+- Use of `eval()`
+- Weak Exception Handling (`except:`)
 
-**Risk:**
-Attackers who gain access to the code can view credentials.
+ This tool performs basic pattern-based static analysis and is intended for learning and educational purposes.
 
-**Recommendation:**
-Store credentials securely using environment variables or a database.
 
-### 2. SQL Injection
+## 🛠️ Technologies Used
 
-**Severity:** High
+- Python
+- Flask
+- HTML
+- CSS
+- Visual Studio Code
 
-**Description:**
-User input is directly concatenated into an SQL query.
+## ▶️ How to Run
 
-**Risk:**
-An attacker may manipulate database queries and gain unauthorized access.
+### 1. Clone the repository
 
-**Recommendation:**
-Use parameterized queries.
+```bash
+git clone https://github.com/your-username/Secure-Coding-Review-Tool.git
+```
 
-### 3. Lack of Input Validation
+### 2. Navigate to the project folder
 
-**Severity:** Medium
+```bash
+codealpha_secure_coding_review
+```
 
-**Description:**
-User input is accepted without validation.
+### 3. Install the required package
 
-**Risk:**
-Unexpected or malicious input may affect application behavior.
+```bash
+pip install flask
+```
 
-**Recommendation:**
-Validate and sanitize all user inputs.
+### 4. Run the application
 
-## Conclusion
+```bash
+python app.py
+```
 
-The code review identified multiple security vulnerabilities including hardcoded credentials, SQL injection, and insufficient input validation. Implementing secure coding practices would significantly improve the security of the application.
+### 5. Open your browser
+
+```
+http://127.0.0.1:5000
+```
+
+### 6. Upload a Python (.py) file and click "Analyze".
+
+---
+
+## 📸 Project Screenshots
+
+### Home Page
+
+*<img width="1907" height="556" alt="image" src="https://github.com/user-attachments/assets/9c224621-d297-4cd9-aa09-bb3ba80edd31" />
+
+
+### Security Report
+
+<img width="1831" height="795" alt="image" src="https://github.com/user-attachments/assets/27dace16-898b-4b36-a06b-5badea6b1d87" />
+<img width="1870" height="560" alt="image" src="https://github.com/user-attachments/assets/f4018744-15df-4e80-8163-9d4f912eaf4c" />
+
+
+## 📄 Sample File
+
+A sample vulnerable Python file (`sample.py`) is included in this repository to demonstrate the functionality of the tool.
+
+## 🔒 Remediation Suggestions
+
+The application provides recommendations for each detected vulnerability, such as:
+
+- Avoid storing passwords directly in source code.
+- Replace `eval()` with safer alternatives.
+- Catch specific exceptions instead of using generic `except:`.
+- Follow secure coding best practices.
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, I gained hands-on experience in:
+
+- Secure Coding Review
+- Basic Static Code Analysis
+- Python Security Concepts
+- Flask Web Development
+- HTML & CSS Integration
+- Secure Coding Best Practices
+
+## 🚀 Future Enhancements
+
+- Detect additional Python security vulnerabilities
+- Generate downloadable security reports
+- Add a security score
+- Improve vulnerability classification
+- Support multiple programming languages
+
+---
+
+## 👩‍💻 Author
+
+Anto Vivina
+
+Computer Science Engineering (Cyber Security)
+
+Aspiring Cybersecurity Professional | Python Learner | Passionate about Secure Coding
