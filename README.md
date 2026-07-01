@@ -38,7 +38,7 @@ Users can upload any Python (`.py`) file, and the application scans it for selec
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/Secure-Coding-Review-Tool.git
+git clone https://github.com/antovivina/securecodingreview.git
 ```
 
 ### 2. Navigate to the project folder
