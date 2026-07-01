@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Secure Coding Review Tool</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            margin:40px;
+        }
+
+        h1{
+            text-align:center;
+            color:#003366;
+        }
+
+        .info{
+            text-align:center;
+            color:#555;
+            margin-bottom:25px;
+        }
+
+        form{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 2px 8px rgba(0,0,0,0.2);
+            margin-bottom:25px;
+        }
+
+        input[type=file]{
+            margin:15px;
+        }
+
+        input[type=submit]{
+            background:#003366;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        input[type=submit]:hover{
+            background:#0055aa;
+        }
+
+        .summary{
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.15);
+            margin-bottom:25px;
+        }
+
+        .card{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            margin-bottom:20px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .critical{
+            color:white;
+            background:#d9534f;
+            padding:4px 10px;
+            border-radius:5px;
+        }
+
+        .high{
+            color:white;
+            background:#f0ad4e;
+            padding:4px 10px;
+            border-radius:5px;
+        }
+
+        .medium{
+            color:white;
+            background:#5bc0de;
+            padding:4px 10px;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>🔐 Secure Coding Review Tool</h1>
+
+<p class="info">
+Upload any Python (.py) file to analyze it for common security vulnerabilities.
+</p>
+
+<form method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="file" accept=".py" required>
+
+    <br>
+
+    <input type="submit" value="Analyze">
+
+</form>
+
+{% if findings %}
+
+<div class="summary">
+
+<h2>Security Report</h2>
+
+<p><b>Analyzed File:</b> {{ filename }}</p>
+
+<p><b>Total Vulnerabilities Found:</b> {{ findings|length }}</p>
+
+</div>
+
+{% for item in findings %}
+
+<div class="card">
+
+<h3>{{ item.title }}</h3>
+
+<p>
+<b>Severity:</b>
+
+{% if item.severity=="Critical" %}
+<span class="critical">{{ item.severity }}</span>
+
+{% elif item.severity=="High" %}
+<span class="high">{{ item.severity }}</span>
+
+{% else %}
+<span class="medium">{{ item.severity }}</span>
+
+{% endif %}
+
+</p>
+
+<p><b>Description:</b> {{ item.description }}</p>
+
+<p><b>Recommendation:</b> {{ item.recommendation }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+</body>
+
+</html>
